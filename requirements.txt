@@ -9,4 +9,4 @@ xgboost
 python-dotenv
 
 
--e . #editable mod
+# -e . #editable mod

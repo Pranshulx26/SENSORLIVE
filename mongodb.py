@@ -1,19 +1,28 @@
-from pymongo import MongoClient 
+from pymongo import MongoClient  # type: ignore
+import os 
+
+from dotenv import load_dotenv
+print(f"for reading the .env file")
+load_dotenv()
+
+uri = os.getenv('MONGO_DB_URL')
 
 
-uri = "mongodb+srv://pranshulx26:Pranshul26@cluster0.zyfrp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
 
 client = MongoClient(uri)
 db = client['liveclass']
 collection = db['mongoclass']
 data = {
-    "name": "prince katiyar",
+    "name": "pranshul Sharma",
     "age": 2,
-    "email": "princekatiyar444234@gmail.com"
+    "email": "pranshulsharma83@gmail.com"
     
 }
+# inserting data
+collection.insert_one(data)
+# fetching data
+# cursor = collection.find({})
+# for i in cursor:
+#     print(i)
 
-# collection.insert_one(data)
-cursor = collection.find({})
-for i in cursor:
-    print(i)
