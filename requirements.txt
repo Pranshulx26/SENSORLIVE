@@ -1,0 +1,12 @@
+pymongo[srv]
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
+python-dotenv
+
+
+-e . #editable mod
